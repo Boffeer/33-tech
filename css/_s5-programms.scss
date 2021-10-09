@@ -1,5 +1,14 @@
+.s5-programms {
+	background-image: url("../img/s5-programm/s5-bg.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
 .s5-programms__desc {
 	display: none;
+}
+.s5-programms-slider {
+	position: relative;
 }
 .s5-programms-slider-slide {
 	display: block;
@@ -10,7 +19,7 @@
 	padding-left: 25px;
 	padding-right: 25px;
 	padding-top: 30px;
-	padding-bottom: 95px;
+	padding-bottom: 30px;
 	@include border-inner(5px);
 }
 // .s3-teches-slider-slide--module--3 {
@@ -151,4 +160,15 @@
 	br {
 		display: none;
 	}
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets.s5-buttons-pagination .swiper-pagination-bullet {
+	margin: 5px 14px;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets.s5-buttons-pagination, .swiper-pagination-custom, .swiper-pagination-fraction {
+	bottom: -50px
+}
+.s5-slider-button--prev,
+.s5-slider-button--next {
+	top: 33%;
 }

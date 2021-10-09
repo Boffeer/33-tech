@@ -104,9 +104,10 @@
 		}
 	}
 }
-.s1-header-badge__tooltip.active {
+.s1-header-badge__tooltip.shown {
 	transition: all 0.3s ease;
 	transform: scale(1);
+	opacity: 1;
 }
 .s1-header-badge__name {
 	font-weight: 500;

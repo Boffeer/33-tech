@@ -1,108 +1,100 @@
-$(document).ready(function () {
-  AOS.init();
+const headerBadge = document.querySelector('.s1-header-badge');
+const headerBadgeTooltip = document.querySelector('.s1-header-badge__tooltip');
 
-  /**
-   * Sticky Header
-   */
-  let isWindowScrolled = $(this).scrollTop() > 100;
-  let isStickyHeaderAllowed = window.innerWidth >= 768;
-  function stickyHeader() {
-    if ($(this).scrollTop() > 100 && window.innerWidth >= 768) {
-      $(".header-menu").addClass("header-menu--scrolled");
-    } else {
-      $(".header-menu").removeClass("header-menu--scrolled");
-    }
+let isTooltipHidden = true;
+headerBadge.addEventListener('click', function() {
+  if (isTooltipHidden) {
+    headerBadgeTooltip.classList.add('shown')
+    isTooltipHidden = false;
+  } else {
+    headerBadgeTooltip.classList.remove('shown')
+    isTooltipHidden = true
   }
-  $(window).on("scroll", function () {
-    stickyHeader();
-  });
-  stickyHeader();
+  console.log(isTooltipHidden);
+})
 
-  // MASK
-  $("input[name=tel").inputmask("+7 (999) 999-99-99");
-
+window.addEventListener('click', function(event) {
+  if (event.target != headerBadge && isTooltipHidden == false) {
+    headerBadgeTooltip.classList.remove('shown');
+    isTooltipHidden = true;
+  } else {
+  }
+})
   /**
    * DROPDOWN
    */
-  $(".faq-list-card-top").each(function () {
-    $(this).on("click", function () {
-      $(this).toggleClass("faq-list-card-top--opened");
-      $(this).parent().find(".faq-list-card-bottom").slideToggle();
+  // $(".faq-list-card-top").each(function () {
+  //   $(this).on("click", function () {
+  //     $(this).toggleClass("faq-list-card-top--opened");
+  //     $(this).parent().find(".faq-list-card-bottom").slideToggle();
+  //   });
+  // });
+
+  const bundlesSlider = new Swiper('.s13-bundles-slider', {
+    spaceBetween: 50,
+    pagination: {
+      el: '.s13-buttons-pagination',
+    },
+    navigation: {
+      nextEl: '.s13-slider-button--next',
+      prevEl: '.s13-slider-button--prev',
+    },
+    breakpoints: {
+      // when window width is >= 320px
+      1199: {
+        slidesPerView: 3,
+      },
+    }
+  });
+
+  const programmSlider = new Swiper('.s5-programms-slider', {
+    spaceBetween: 50,
+    pagination: {
+      el: '.s5-buttons-pagination',
+    },
+    navigation: {
+      nextEl: '.s5-slider-button--next',
+      prevEl: '.s5-slider-button--prev',
+    },
+    breakpoints: {
+      1199: {
+        slidesPerView: 3,
+      },
+    }
+  })
+
+  const SLIDERS_ARRAY = [programmSlider, bundlesSlider];
+
+  function fixSingleSliderHeight(slider) {
+      slider.$el[0].style.height = 'auto'
+      let currentSlideIndex = slider.realIndex + 1;
+      let currentSlides = slider.slides;
+      let currentSlide;
+      currentSlides.map(slide => {
+        let regex = new RegExp(`^${currentSlideIndex} /`)
+        if (slide.getAttribute('aria-label').match(regex)) {
+          currentSlide = slide;
+        }
+      })
+      setTimeout(() => {
+        let sliderWrapper = currentSlide.parentElement.parentElement;
+        let sliderHeight = currentSlide.clientHeight;
+        sliderWrapper.style.height = `${sliderHeight}px`
+      }, 10)
+  }
+
+  function fixSlidersHeight(slider) {
+    slider.on('slideChange', function () {
+      fixSingleSliderHeight(slider);
     });
-  });
+  }
 
-  /**
-   * TABS
-   */
-  $(".cases-showcase-tabbar__button").each(function () {
-    $(this).on("click", function () {
-      $(".cases-showcase-tabbar__button").removeClass(
-        "cases-showcase-tabbar__button--current"
-      );
-      $(this).addClass("cases-showcase-tabbar__button--current");
-      var target = $(this).attr("data-target");
-
-      $(".cases-showcase-tabs-tab").hide();
-      $('.cases-showcase-tabs-tab[data-target="' + target + '"]').show();
-
-      $("html, body").animate(
-        { scrollTop: $(".cases").offset().top - 40 },
-        800
-      );
-    });
-  });
-
-  /**
-   * POPUPS
-   */
-  modality({
-    pop: ".form--header-menu-callback",
-    clickTrigger: ".header-menu__callback",
-    popCloserType: "inner",
-  });
-  modality({
-    pop: ".pop-thanks",
-    clickTrigger: ".pop-thanks",
-    popCloserType: "inner",
-  });
-
-  /**
-   * AJAX SEND
-   */
-  $(".form").each(function () {
-    $(this).on("submit", function (event) {
-      event.preventDefault();
-      let userName = $(this).find('input[name="user-name"]');
-      let userTel = $(this).find('input[name="user-tel"]');
-      // console.log('аякс пошел', userName.val(), userTel.val(), $(this));
-      $.ajax({
-        url: "send.php",
-        type: "POST",
-        dataType: "json",
-        data: {
-          user_name: userName.val(),
-          user_tel: userTel.val(),
-        },
-        success: function (data) {},
-      });
-      $(this)[0].reset();
-      // console.log('отправляем')
-      ym(82308838, "reachGoal", "form-submit");
-      closePop(
-        document.querySelector(".form--header-menu-callback-wrapper"),
-        document.querySelector(".form--header-menu-callback")
-      );
-      showPop(
-        document.querySelector(".pop-thanks-wrapper"),
-        document.querySelector(".pop-thanks")
-      );
-      setTimeout(function () {
-        closePop(
-          document.querySelector(".pop-thanks-wrapper"),
-          document.querySelector(".pop-thanks")
-        );
-      }, 5000);
-      return false;
-    });
-  });
-});
+  SLIDERS_ARRAY.forEach(slider => {
+    fixSlidersHeight(slider)
+    fixSingleSliderHeight(slider)
+  })
+  window.addEventListener('resize', () => {
+    SLIDERS_ARRAY.forEach(slider => {
+      fixSlidersHeight(slider)
+    })
+  })

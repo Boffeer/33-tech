@@ -89,12 +89,21 @@ window.addEventListener('click', function(event) {
     });
   }
 
-  SLIDERS_ARRAY.forEach(slider => {
-    fixSlidersHeight(slider)
-    fixSingleSliderHeight(slider)
-  })
-  window.addEventListener('resize', () => {
+  setTimeout(() => {
     SLIDERS_ARRAY.forEach(slider => {
       fixSlidersHeight(slider)
+      setTimeout(() => {
+        slider.slideNext();
+        setTimeout(() => {
+          slider.slidePrev();
+        }, 400)
+        console.log('yep')
+      }, 20)
+      // fixSingleSliderHeight(slider)
     })
-  })
+  }, 100)
+  // window.addEventListener('resize', () => {
+  //   // SLIDERS_ARRAY.forEach(slider => {
+  //   //   fixSlidersHeight(slider)
+  //   // })
+  // })

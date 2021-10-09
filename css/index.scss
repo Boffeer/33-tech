@@ -1,0 +1,346 @@
+@font-face {
+	src:
+		url("../fonts/Montserrat-Regular.woff2") format("woff2"),
+		url("../fonts/Montserrat-Regular.woff") format("woff");
+	font-family: "Montserrat";
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	src:
+		url("../fonts/Montserrat-Medium.woff2") format("woff2"),
+		url("../fonts/Montserrat-Medium.woff") format("woff");
+	font-family: "Montserrat";
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	src:
+		url("../fonts/Montserrat-Bold.woff2") format("woff2"),
+		url("../fonts/Montserrat-Bold.woff") format("woff");
+	font-family: "Montserrat";
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	src:
+		url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"),
+		url("../fonts/PlayfairDisplay-Bold.woff") format("woff");
+	font-family: "PlayfairDisplay";
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	src:
+		url("../fonts/PlayfairDisplay-SemiBold.woff2") format("woff2"),
+		url("../fonts/PlayfairDisplay-SemiBold.woff") format("woff");
+	font-family: "PlayfairDisplay";
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	src:
+		url("../fonts/PlayfairDisplay-Medium.woff2") format("woff2"),
+		url("../fonts/PlayfairDisplay-Medium.woff") format("woff");
+	font-family: "PlayfairDisplay";
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+:root {
+	--c-accent: #ffb75e;
+	--tc-regular: #29292c;
+	--tc-secondary: #ffffff;
+	--bgc-secondary: #e5e4e4;
+
+	--z-dropdown: 10;
+	--z-tooltip: 20;
+	--z-sticky-header: 90;
+	--z-popup: 100;
+	--z-burger-button: 50;
+	--z-burger: 110;
+
+	--fz-h2: 19px;
+	--fz-h3: 16px;
+	--fz-h3-small: 18px;
+	--fz-regular: 13px;
+	--fz-button: 14px;
+	--fz-small: 12px;
+
+	--ff-montserrat: "Montserrat", "Helvetica", "Arial", sans-serif;
+	--ff-playfair: "PlayfairDisplay", "Times", "Georgia", serif;
+
+	--bs-default: 0px 7px 17.1px 0.9px rgba(0, 0, 0, 0.14);
+}
+
+@media (min-width: 768px) {
+	:root {
+		--fz-h2: 42px;
+		--fz-h3: 30px;
+		--fz-h3-small: 25px;
+		--fz-regular: 20px;
+		--fz-button: 19px;
+		--fz-small: 14px;
+	}
+}
+
+$ff-ss: var(--ff-montserrat);
+$ff-s: var(--ff-playfair);
+
+$fz-p: var(--fz-regular);
+$fz-h2: var(--fz-h2);
+$fz-h3: var(--fz-h3);
+$fz-h3-small: var(--fz-h3-small);
+$fz-button: var(--fz-button);
+$fz-small: var(--fz-small);
+
+@mixin transition-mix(
+	$property: all,
+	$duration: 0.2s,
+	$timing: linear,
+	$delay: 0s
+) {
+	transition-property: $property;
+	transition-duration: $duration;
+	transition-delay: $delay;
+	transition-timing-function: $timing;
+}
+
+@mixin position-absolute($top: null, $right: null, $bottom: null, $left: null) {
+	position: absolute;
+	left: $left;
+	right: $right;
+	top: $top;
+	bottom: $bottom;
+}
+
+* {
+	outline: none;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+.hidden {
+	visibility: hidden;
+}
+a,
+button {
+	cursor: pointer;
+}
+input,
+button {
+	display: inline-block;
+	border: none;
+	padding: 0;
+	background: none;
+}
+p,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol {
+	margin: 0;
+	padding: 0;
+	font-weight: 400;
+}
+h2 {
+	font-size: $fz-h2;
+	font-family: $ff-s;
+	font-weight: 700;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+body {
+	font-family: $ff-ss;
+	font-size: $fz-p;
+	color: var(--tc-regular);
+}
+.form-privacy {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	&__checkbox {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		margin-right: 10px;
+		border-radius: 2px;
+		width: 15px;
+		height: 15px;
+		background-color: rgb(130, 130, 130);
+		cursor: pointer;
+		&::after {
+			content: "";
+			position: absolute;
+			display: inline-block;
+			border-radius: 50%;
+			width: 4px;
+			height: 4px;
+		}
+	}
+}
+.form-privacy__checkbox-hidden:checked + .form-privacy__checkbox {
+	background-image: url("../img/form/form-check.svg");
+	background-position: center;
+	background-size: 70%;
+	background-repeat: no-repeat;
+}
+.fixed {
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+
+// __POPS
+.popups {
+	display: none;
+}
+.pop-thanks {
+	border-radius: 12px;
+	padding: 40px 20px;
+	width: 300px;
+	background-color: #fff;
+}
+
+
+img {
+	max-width: 100%
+}
+.container {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+
+section {
+	display: none;
+	padding-top: 65px;
+	padding-bottom: 65px;
+}
+.s5-programms,
+.s13-bundles {
+	display: block;
+}
+main {
+	overflow-x: hidden;
+}
+
+
+.button {
+    font-family: $ff-ss;
+	font-size: $fz-button;
+	font-weight: 700;
+    background: linear-gradient( 0deg ,#049f04 0,#00c600 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    display: inline-block;
+    max-width: 256px;
+	width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: relative;
+    box-sizing: border-box;
+    z-index: 20;
+    box-shadow: 0 4px 0 #02b202, 0 -2px 0 #02b202;
+	text-shadow: 0.5px 0.8px 0 #060;
+	position: relative;
+	overflow: hidden;
+	&--desktop {
+		display: none;
+	}
+}
+.button__desc {
+	text-shadow: inherit;
+	font-size: inherit;
+}
+@keyframes blink {
+	30% {  webkit-transform: skewX(-45deg) translateX(33.5em);
+		transform: skewX(-45deg) translateX(33.5em);
+	}
+	100% {  webkit-transform: skewX(-45deg) translateX(33.5em);
+		transform: skewX(-45deg) translateX(33.5em);
+	}
+}
+.button-blink {
+	content: "";
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4.5em;
+    -webkit-transform: skewX(-45deg) translateX(0);
+    transform: skewX(-45deg) translateX(0);
+    -webkit-transition: none;
+    transition: none;
+
+	-webkit-animation: blink 3s ease-in-out infinite;
+    -moz-animation: blink 3s ease-in-out infinite;
+    -ms-animation: blink 3s ease-in-out infinite;
+    -o-animation: blink 3s ease-in-out infinite;
+    animation: blink 3s ease-in-out infinite;
+}
+//  button-animate
+
+@mixin border-inner($padding: 5px) {
+	&:before {
+		content: "";
+		position: absolute;
+		top: $padding;
+		left: $padding;
+		pointer-events: none;
+		width: calc(100% - 10px);
+		height: calc(100% - 10px);
+		border: 1px solid var(--bgc-secondary);
+		border-radius: 12px;
+	}
+}
+
+.section__title {
+	text-align: center;
+	max-width: 270px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 1.4;
+	text-transform: uppercase;
+	margin-bottom: 40px;
+	br {
+		display: none;
+	}
+}
+.buttons__contianer {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@import "_s1-header.scss";
+@import "_s5-programms.scss";

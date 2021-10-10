@@ -30,22 +30,22 @@ window.addEventListener('click', function(event) {
   //   });
   // });
 
-  const bundlesSlider = new Swiper('.s13-bundles-slider', {
-    spaceBetween: 50,
-    pagination: {
-      el: '.s13-buttons-pagination',
-    },
-    navigation: {
-      nextEl: '.s13-slider-button--next',
-      prevEl: '.s13-slider-button--prev',
-    },
-    breakpoints: {
-      // when window width is >= 320px
-      1199: {
-        slidesPerView: 3,
-      },
-    }
-  });
+  // const bundlesSlider = new Swiper('.s13-bundles-slider', {
+  //   spaceBetween: 50,
+  //   pagination: {
+  //     el: '.s13-buttons-pagination',
+  //   },
+  //   navigation: {
+  //     nextEl: '.s13-slider-button--next',
+  //     prevEl: '.s13-slider-button--prev',
+  //   },
+  //   breakpoints: {
+  //     // when window width is >= 320px
+  //     1199: {
+  //       slidesPerView: 3,
+  //     },
+  //   }
+  // });
 
   const programmSlider = new Swiper('.s5-programms-slider', {
     spaceBetween: 50,
@@ -63,7 +63,8 @@ window.addEventListener('click', function(event) {
     }
   })
 
-  const SLIDERS_ARRAY = [programmSlider, bundlesSlider];
+  // const SLIDERS_ARRAY = [programmSlider, bundlesSlider];
+  const SLIDERS_ARRAY = [programmSlider];
 
   function fixSingleSliderHeight(slider) {
       slider.$el[0].style.height = 'auto'
@@ -107,3 +108,59 @@ window.addEventListener('click', function(event) {
   //   //   fixSlidersHeight(slider)
   //   // })
   // })
+
+function getTimeRemaining(endtime) {
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+
+
+if (window.location.href != 'https://ekaterinaschol.ru/default') {
+  var deadline = new Date(Date.parse('16 Oct 2021 23:59:00 GMT'));
+
+  function initializeClock(id, endtime) {
+    var clock = document.getElementById(id);
+    // var clock = document.querySelector(id);
+    var daysSpan = clock.querySelector('.timer-days__value');
+    var hoursSpan = clock.querySelector('.timer-hours__value');
+    var minutesSpan = clock.querySelector('.timer-minutes__value');
+    var secondsSpan = clock.querySelector('.timer-seconds__value');
+
+    function updateClock() {
+      var t = getTimeRemaining(endtime);
+
+      daysSpan.innerHTML = t.days;
+      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+      if (t.total <= 0) {
+          location.replace('https://katyschool.ru/7')
+      }
+
+    }
+
+    updateClock();
+    var timeinterval = setInterval(updateClock, 1000);
+  }
+
+  // if (localStorage.getItem('localTimerEkaterinaSchol33tech') == null){
+  //   // localStorage.setItem('localTimerEkaterinaSchol33tech', new Date(Date.parse(new Date()) + 60 * 60 * 1000))
+  //   localStorage.setItem('localTimerEkaterinaSchol33tech',  );
+  // }
+
+
+  // var deadline = localStorage.getItem('localTimerEkaterinaSchol33tech');
+  // var deadline = new Date(Date.parse(new Date()) + 10 * 1000); // for endless timer
+  initializeClock('timer', deadline);
+}

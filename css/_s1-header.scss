@@ -1,19 +1,22 @@
 .s1-header {
 	background-image: url(../img/s1-hero/bg.jpg);
+	background-color: var(--c-accent);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 	padding-top: 15px;
 	color: var(--tc-secondary);
-	margin-bottom: 160px;
+	// margin-bottom: 160px;
+	margin-bottom: 60px;
 }
 .s1-header-branding {
 	display: flex;
 	margin-bottom: 20px;
+	margin-bottom: -35px;
 }
 .s1-header-branding-logo {
 	display: block;
-	max-width: 40px;
+	max-width: 35px;
 }
 
 .s1-header-branding-logo__desc {
@@ -25,11 +28,13 @@
 	line-height: 1.2;
 	margin-bottom: 12px;
 	font-family: $ff-s;
+	font-weight: 700;
 }
 .s1-header__desc {
 	text-align: center;
 	line-height: 1.5;
 	margin-bottom: 40px;
+	margin-bottom: 20px;
 	&--bold {
 		font-weight: 600;
 	}
@@ -45,7 +50,8 @@
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
-	height: 425px;
+	// height: 425px;
+	height: 335px;
 }
 .s1-header-badge {
 	background-color: #fff;
@@ -117,8 +123,8 @@
 	color: var(--tc-regular);
 	background-color: #fff;
 	position: relative;
-	padding-top: 30px;
-	padding-bottom: 45px;
+	padding-top: 20px;
+	padding-bottom: 25px;
 	padding-left: 55px;
 	padding-right: 55px;
 	@include border-inner(5px);
@@ -126,22 +132,53 @@
 	border-radius: 12px;
 	position: absolute;
 	left: 50%;
-	bottom: -190px;
+	// bottom: -190px;
 	transform: translateX(-50%);
 	width: 100%;
 	max-width: 320px;
+	bottom: -70px;
 }
 .s1-infobox ul {
-	margin-bottom: 30px;
+	// margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 .s1-infobox ul li {
 	font-size: $fz-button;
 	font-weight: 500;
-	margin-bottom: 15px;
+	margin-bottom: 7px;
 }
 .s1-infobox__img {
 	display: none;
 }
 .container--header {
 	position: relative;
+}
+
+// s1-header__strawberry s1-header__strawberry--blured
+// s1-header__strawberry s1-header__strawberry--blured
+.s1-header__strawberry {
+	position: absolute;
+	height: 130px;
+	width: 130px;
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.s1-header__strawberry--blured {
+	background-image: url("../img/decorators/strawberry-blur.png");
+	top: 30%;
+	left: -40px;
+}
+.s1-header__strawberry--sharp {
+	background-image: url("../img/decorators/strawberry-sharp.png");
+	top: 45%;
+	right: -40px;
+	width: 90px;
+	height: 90px;
+}
+.s1-header__whisk {
+	display: none;
+}
+.s5-programms-slider-slide:first-child  {
+	min-height: 841px;
 }

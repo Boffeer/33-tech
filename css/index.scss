@@ -334,6 +334,10 @@ main {
     animation: blink 3s ease-in-out infinite;
 }
 //  button-animate
+.button__desc,
+.button-blink {
+	pointer-events: none;
+}
 
 @mixin border-inner($padding: 5px) {
 	&:before {
@@ -384,7 +388,54 @@ main {
     justify-content: center;
     align-items: center;
 }
+.decorator__container {
+	pointer-events: none;
+	overflow-x: hidden;
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
 
 @import "_s1-header.scss";
 @import "_s5-programms.scss";
 @import "_s13-bundles.scss";
+@import "_s19-footer.scss";
+
+.timer {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 40px;
+	margin-top: -40px;
+}
+
+.infobox--timer {
+	position: relative;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	transform: none;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	text-align: center;
+	flex-direction: column;
+}
+
+.timer-counter {
+	width: 60px;
+}
+.timer-counter__value {
+	font-size: 30px;
+	font-family: $ff-s;
+	margin-bottom: 10px;
+}
+.timer-counter__name {
+	font-size: 12px;
+}
+.timer__inner {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}

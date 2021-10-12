@@ -2,6 +2,7 @@ const navLinks = [...document.querySelectorAll('.pop-burger-nav__link')]
 navLinks.forEach(link => {
   link.addEventListener('click', function() {
     closePop('.pop-burger');
+    document.querySelector('html').classList.remove('poppa-block-scrolling')
   })
 })
 

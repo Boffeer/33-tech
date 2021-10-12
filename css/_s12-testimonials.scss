@@ -1,0 +1,23 @@
+.s12-testimonials {
+	padding-top: 25px;
+}
+.s12-testimonials-slider {
+	height: 430px;
+	position: relative;
+}
+.s12-testimonials-slider-slide {
+	padding: 5px;
+	position: relative;
+	background-color: #fff;
+	box-shadow: var(--bs-default);
+	overflow: hidden;
+	border-radius: 12px;
+}
+
+
+.s12-testimonials-slider-slide__img {
+	border-radius: 12px;
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+}

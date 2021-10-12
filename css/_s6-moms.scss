@@ -1,0 +1,60 @@
+.s6-moms {
+	background-image: url("../img/s6-moms/s6-bg.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	overflow-x: hidden;
+}
+.s6-moms__title {
+	color: #fff;
+}
+.s6-moms-hero {
+	margin-top: 80px;
+	margin-bottom: -110px;
+	transform: scale(2.5);
+}
+.s6-moms-cards {
+	max-width: 280px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	margin-bottom: 60px;
+}
+.s6-moms-cards-card {
+	background-color: #fff;
+	border-radius: 20px;
+	box-shadow: var(--bs-default);
+	padding-top: 26px;
+	padding-left: 35px;
+	padding-right: 35px;
+	min-height: 320px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+.s6-moms-cards-card__img {
+	max-height: 190px;
+	height: 100%;
+	margin-top: auto;
+	object-fit: contain;
+}
+.s6-moms-cards-card__title {
+	text-align: center;
+	font-family: $ff-s;
+	font-size: calc(var(--fz-h3) + 1px);
+	margin-bottom: 10px;
+	font-weight: 700;
+}
+.s6-moms-cards-card__desc {
+	line-height: 1.5;
+	text-align: center;
+	font-weight: 500;
+}
+
+.s6-moms-slider__button {
+	top: 49%;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets.s6-moms-cards-pagination {
+	bottom: -30px;
+}

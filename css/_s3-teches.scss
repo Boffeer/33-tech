@@ -1,0 +1,57 @@
+.s3-teches {
+	background-image: url("../img/s3-teches/bg-2.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding-top: 35px;
+}
+.s3-teches-slider {
+	min-height: 374px;
+}
+.s3-teches-slider-slide {
+	border-radius: 12px;
+	position: relative;
+	padding-top: 35px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 40px;
+	box-shadow: var(--bs-default);
+	background-color: #fff;
+	@include border-inner(5px);
+}
+.s3-teches-slider__wrapper {
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	margin-bottom: 60px;
+}
+.s3-teches-sldier-slide__title {
+	text-align: center;
+	font-family: $ff-s;
+	margin-bottom: 10px;
+	font-size: $fz-h3;
+	font-weight: 700;
+}
+.s3-teches-sldier-slide__desc {
+	text-align: center;
+	line-height: 1.5;
+	margin-bottom: 30px;
+	&--bold {
+		font-weight: 700;
+	}
+}
+.s3-teches-slider-slide__img {
+	display: block;
+	max-width: 190px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.s3-teches-slider__button {
+	top: 48%;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets.s3-teches-slider-pagination {
+	bottom: -30px;
+}

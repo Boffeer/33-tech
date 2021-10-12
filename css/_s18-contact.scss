@@ -1,0 +1,57 @@
+.s18-contacts {
+	padding-top: 30px;
+}
+.s18-contacts__inner {
+	background-image: url("../img/s18-contact/s-bg.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 20px;
+	padding: 30px 20px;
+	max-width: 320px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.s18-contacts__title {
+	max-width: 280px;
+	font-size: calc(var(--fz-h2) + 2px);
+	color: #fff;
+	text-transform: none;
+	margin-bottom: 30px;
+	br {
+		display: none;
+	}
+}
+.s18-contacts__subtitle {
+	color: #fff;
+	max-width: 100%;
+	margin-bottom: 20px;
+	font-size: $fz-p;
+}
+.s18-contacts-cards-card {
+	background-color: #fff;
+	border-radius: 20px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding-left: 35px;
+	padding-right: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+.s18-contacts-cards-card__logo {
+	width: 40px;
+	height: 40px;
+	display: block;
+	margin-right: 15px;
+}
+.s18-contacts-cards-card-desc__name {
+	font-size: calc(var(--fz-h3) + 1px);
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+.s18-contacts-cards-card-desc__action {
+	font-size: calc(var(--fz-regular) - 1px);
+	margin-bottom: 5px;
+}

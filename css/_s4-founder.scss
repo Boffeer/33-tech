@@ -1,0 +1,80 @@
+.s4-founder {
+	background-image: url("../img/s4-founder/s4-bg.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	overflow-x: hidden;
+}
+.s4-founder__title {
+	color: #fff;
+	max-width: 100%;
+}
+.s4-founder-hero {
+	width: 170%;
+    margin-left: -120px;
+    margin-top: -60px;
+	margin-bottom: -150px;
+}
+.s4-founder-card {
+	background-color: #fff;
+	border-radius: 12px;
+	box-shadow: var(--bs-default);
+	position: relative;
+	padding-top: 35px;
+	padding-bottom: 35px;
+	padding-left: 40px;
+	padding-right: 40px;
+	margin-bottom: 15px;
+	@include border-inner(5px);
+}
+.s4-founder-badge__title {
+	font-family: $ff-s;
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: calc(var(--fz-h3) + 1px);
+}
+.s4-founder-badge__post {
+	margin-bottom: 12px;
+	text-align: center;
+	font-weight: 500;
+	color: var(--c-secondary);
+	& ~ .s4-founder-card__desc {
+		text-align: center;
+	}
+}
+.s4-founder-card__desc {
+	font-size: $fz-p;
+	line-height: 1.4;
+	font-weight: 500;
+}
+.s4-founder-cards {
+	position: relative;
+	max-width: 280px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.s4-founder-cards-card {
+	background-color: #fff;
+	border-radius: 20px;
+	padding: 30px 20px;
+}
+.s4-founder-cards-card__title {
+	font-size: calc(var(--fz-h3) - 1px);
+	color: var(--c-secondary);
+	margin-bottom: 10px;
+}
+
+.s4-founder-cards__button--prev {
+	top: 49%;
+	left: -25px;
+}
+.s4-founder-cards__button--next {
+	top: 49%;
+	right: -25px;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets.s4-founder-cards-pagination {
+	bottom: -25px;
+}

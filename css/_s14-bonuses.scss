@@ -1,0 +1,92 @@
+.s14-bonuses {
+	padding-top: 30px;
+}
+
+.s14-bonuses-cards-card {
+	border-radius: 12px;
+	padding: 20px;
+	position: relative;
+	background-color: #fff;
+	box-shadow: var(--bs-default);
+	overflow: hidden;
+	margin-bottom: 15px;
+	max-width: 320px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.s14-bonuses-cards-card__title {
+	font-family: $ff-s;
+	font-weight: 700;
+	font-size: calc(var(--fz-button) + 1px);
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	line-height: 1.5;
+}
+
+.s14-bonuses-cards-card__number {
+	position: absolute;
+	font-weight: 700;
+	color: var(--bgc-secondary);
+	font-size: 55px;
+	left: 20px;
+    bottom: -15px;
+}
+.s14-bonuses-cards-card__desc {
+	margin-bottom: 8px;
+	font-size: $fz-p;
+	position: relative;
+	padding-left: 10px;
+	line-height: 1.5;
+	&:before {
+		content: '-';
+		position: absolute;
+		left: 0px;
+		top: -1px;
+	}
+}
+
+.s14-bonuses-cards-card__img {
+	display: block;
+	max-height: 200px;
+	margin-left: auto;
+	margin-right: -40px;
+	margin-bottom: 40px;
+}
+.s14-bonuses-cards-card--1 {
+	.s14-bonuses-cards-card__img {
+		max-height: 130px;
+		margin-bottom: -40px;
+		margin-top: -30px;
+	}
+}
+
+.s14-bonuses-cards-card--2 {
+	.s14-bonuses-cards-card__img {
+		margin-bottom: -25px;
+		max-height: 220px;
+		margin-right: -100px;
+		margin-top: -150px;
+	}
+}
+
+.s14-bonuses-cards-card--3 {
+	.s14-bonuses-cards-card__img {
+		margin-bottom: -25px;
+		max-height: 220px;
+		margin-right: -45px;
+		margin-top: -10px;
+	}
+}
+
+.s14-bonuses-cards-card--4 {
+	background-image: linear-gradient( 45deg, rgb(124,15,253) 0%, rgb(174,77,255) 100%);
+	color: #fff;
+	.s14-bonuses-cards-card__number {
+		opacity: 0.1;
+	}
+	.s14-bonuses-cards-card__img {
+		max-height: 180px;
+		margin-right: -60px;
+		margin-bottom: -30px;
+	}
+}

@@ -1,0 +1,65 @@
+.s10-inventory {
+	background-image: url("../img/s10-inventory/s8-b.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding-top: 35px;
+}
+.s10-inventory__title {
+	color: #fff;
+}
+.s10-inventory-card {
+	padding: 30px 20px;
+	background-color: #fff;
+	border-radius: 12px;
+	position: relative;
+	box-shadow: var(--bs-default);
+	overflow: hidden;
+	@include border-inner(5px);
+}
+.s10-inventory-card-bullets {
+	padding-left: 16px;
+}
+.s10-inventory-card-bullets__bullet {
+	position: relative;
+	margin-bottom: 20px;
+	font-weight: 500;
+	&:before {
+		content: '\2022';
+		color: var(--c-secondary);
+		position: absolute;
+		left: -16px;
+		top: -8px;
+		font-size: 1.6rem;
+	}
+}
+.s10-inventory-card-hero {
+	position: relative;
+	&:before {
+		content: '';
+		display: block;
+		width: 240px;
+		height: 240px;
+		border-radius: 100%;
+		background-color: var(--bgc-secondary);
+		position: absolute;
+		left: -40px;
+		bottom: 50px;
+		z-index: 1;
+	}
+}
+.s10-inventory-card-hero__img {
+	position: relative;
+	z-index: 2;
+}
+.s10-inventory-card__desc {
+	font-weight: 500;
+	font-size: calc(var(--fz-button) + 1px);
+	line-height: 1.5;
+	&--color {
+		color: var(--c-secondary);
+	}
+	br {
+		display: none;
+	}
+}

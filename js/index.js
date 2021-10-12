@@ -20,6 +20,39 @@ window.addEventListener('click', function(event) {
   } else {
   }
 })
+
+
+const whoSlider = new Swiper('.s2-who-slider', {
+  spaceBetween: 50,
+  pagination: {
+    el: '.s2-who-slider-pagination',
+  },
+  navigation: {
+    nextEl: '.s2-who-slider-button--next',
+    prevEl: '.s2-who-slider-button--prev',
+  },
+  breakpoints: {
+    1199: {
+      slidesPerView: 3,
+    },
+  }
+})
+const techesSlider = new Swiper('.s3-teches-slider', {
+  spaceBetween: 50,
+  pagination: {
+    el: '.s3-teches-slider-pagination',
+  },
+  navigation: {
+    nextEl: '.s3-teches-slider-button--next',
+    prevEl: '.s3-teches-slider-button--prev',
+  },
+  breakpoints: {
+    1199: {
+      slidesPerView: 3,
+    },
+  }
+})
+
   /**
    * DROPDOWN
    */
@@ -62,9 +95,114 @@ window.addEventListener('click', function(event) {
       },
     }
   })
+  const founderSlider = new Swiper('.s4-founder-cards', {
+    spaceBetween: 50,
+    pagination: {
+      el: '.s4-founder-cards-pagination',
+    },
+    navigation: {
+      nextEl: '.s4-founder-cards__button--next',
+      prevEl: '.s4-founder-cards__button--prev',
+    },
+    breakpoints: {
+      1199: {
+        slidesPerView: 3,
+      },
+    }
+  })
+  const momsSlider = new Swiper('.s6-moms-cards', {
+    spaceBetween: 50,
+    pagination: {
+      el: '.s6-moms-cards-pagination',
+    },
+    navigation: {
+      nextEl: '.s6-moms-cards__button--next',
+      prevEl: '.s6-moms-cards__button--prev',
+    },
+    breakpoints: {
+      1199: {
+        slidesPerView: 3,
+      },
+    }
+  })
+  const reviewsSlider = new Swiper('.s8-reviews-slider', {
+    spaceBetween: 50,
+    pagination: {
+      el: '.s8-reviews-slider-pagination',
+    },
+    navigation: {
+      prevEl: '.s8-reviews-slider__button--prev',
+      nextEl: '.s8-reviews-slider__button--next',
+    },
+    breakpoints: {
+      1199: {
+        slidesPerView: 3,
+      },
+    }
+  })
+  const easySlider = new Swiper('.s9-easy-cards', {
+    spaceBetween: 50,
+    pagination: {
+      el: '.s9-easy-cards-pagination',
+    },
+    navigation: {
+      nextEl: '.s9-easy-cards__button--next',
+      prevEl: '.s9-easy-cards__button--prev',
+    },
+    breakpoints: {
+      1199: {
+        slidesPerView: 3,
+      },
+    }
+  })
+  const testimonialsSlider = new Swiper('.s12-testimonials-slider', {
+    spaceBetween: 50,
+    pagination: {
+      el: '.s12-testimonials-slider-pagination',
+    },
+    navigation: {
+      nextEl: '.s12-testimonials-slider__button--next',
+      prevEl: '.s12-testimonials-slider__button--prev',
+    },
+    breakpoints: {
+      1199: {
+        slidesPerView: 3,
+      },
+    }
+  })
+  const certsSlider = new Swiper('.s15-cert-slider', {
+    spaceBetween: 50,
+    pagination: {
+      el: '.s15-cert-slider-pagination',
+    },
+    navigation: {
+      nextEl: '.s15-cert-slider__button--next',
+      prevEl: '.s15-cert-slider__button--prev',
+    },
+    breakpoints: {
+      1199: {
+        slidesPerView: 3,
+      },
+    }
+  })
+  const videosSlider = new Swiper('.s7-videos-slider', {
+    spaceBetween: 50,
+    pagination: {
+      el: '.s7-videos-slider-pagination',
+    },
+    navigation: {
+      nextEl: '.s7-videos-slider__button--next',
+      prevEl: '.s7-videos-slider__button--prev',
+    },
+    breakpoints: {
+      1199: {
+        slidesPerView: 3,
+      },
+    }
+  })
 
   // const SLIDERS_ARRAY = [programmSlider, bundlesSlider];
-  const SLIDERS_ARRAY = [programmSlider];
+  const SLIDERS_ARRAY = [programmSlider, whoSlider, reviewsSlider, techesSlider, founderSlider, momsSlider, easySlider];
 
   function fixSingleSliderHeight(slider) {
       slider.$el[0].style.height = 'auto'
@@ -164,3 +302,93 @@ if (window.location.href != 'https://ekaterinaschol.ru/default') {
   // var deadline = new Date(Date.parse(new Date()) + 10 * 1000); // for endless timer
   initializeClock('timer', deadline);
 }
+
+// DROPDOWNS
+// margin-top = -(answer height + 20)
+
+const dropdowns = [...document.querySelectorAll('.s17-faq-cards-card-question')];
+
+const dropdownOpenedClass = 'opened';
+dropdowns.forEach((dropdown, index) => {
+  dropdown.addEventListener("click", function () {
+    const currentAnswer = this.parentElement.querySelector('.s17-faq-cards-card-answer')
+    let currentAnswerHeight = currentAnswer.clientHeight;
+
+    if (this.parentElement.classList.value.includes(dropdownOpenedClass)) {
+      currentAnswer.style.marginTop = '0';
+      this.parentElement.classList.remove(dropdownOpenedClass);
+    } else {
+      currentAnswer.style.marginTop = `-${currentAnswerHeight}px`;
+      this.parentElement.classList.add(dropdownOpenedClass);
+    }
+  });
+  if (index > 0) {
+    dropdown.click();
+  }
+});
+
+
+// YT video and thumbnail getter
+
+const reviews = [...document.querySelectorAll('.s8-reviews-slider-slide')]
+
+function getYtThumbnailUrl(id) {
+  return `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`
+}
+function getYtEmbedUrl(id) {
+  return `https://www.youtube.com/embed/${id}?autoplay=1&enablejsapi=1`
+}
+
+// reviews.forEach(review => {
+//   let ytVideoId = review.getAttribute('data-yt-id');
+//   let ytThumbnailSrc = getYtThumbnailUrl(ytVideoId);
+//   let ytEmbedSrc = getYtEmbedUrl(ytVideoId);
+
+//   const preview = review.querySelector('.s8-reviews-slider-slide-video__media--preview')
+//   const video = review.querySelector('.s8-reviews-slider-slide-video__media--video')
+
+//   preview.setAttribute('src', ytThumbnailSrc);
+
+//   review.querySelector('.s8-reviews-slider-slide-video__play').addEventListener('click', function() {
+//     video.style.display = 'block';
+//     video.setAttribute('src', ytEmbedSrc);
+//     preview.style.display = 'none';
+//     this.remove();
+//   })
+// })
+
+function ytLazyLoad($) {
+  $.cards.forEach(card => {
+    let ytVideoId = card.getAttribute('data-yt-id');
+    let ytThumbnailSrc = getYtThumbnailUrl(ytVideoId);
+    let ytEmbedSrc = getYtEmbedUrl(ytVideoId);
+
+    const preview = card.querySelector($.img)
+    const video = card.querySelector($.iframe)
+
+    preview.setAttribute('src', ytThumbnailSrc);
+
+    card.querySelector($.play).addEventListener('click', function() {
+      video.style.display = 'block';
+      video.setAttribute('src', ytEmbedSrc);
+      preview.style.display = 'none';
+      this.remove();
+    })
+  })
+}
+
+ytLazyLoad({
+  cards: reviews,
+  img: '.s8-reviews-slider-slide-video__media--preview',
+  iframe: '.s8-reviews-slider-slide-video__media--video',
+  play: '.s8-reviews-slider-slide-video__play',
+})
+
+
+const videos = [...document.querySelectorAll('.s7-videos-slider-slide')]
+ytLazyLoad({
+  cards: videos,
+  img: '.s7-videos-slider-slide-video__media--preview',
+  iframe: '.s7-videos-slider-slide-video__media--video',
+  play: '.s7-videos-slider-slide-video__play',
+})

@@ -14,6 +14,7 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	background-color: var(--c-accent);
 	padding-top: 30px;
 	padding-bottom: 30px;
 	color: #fff;
@@ -25,6 +26,7 @@
 }
 .s13-bundles-cards-card-heading--premium {
 	background-image: url("../img/s13-bundles/heading-premium.png");
+	background-color: var(--c-secondary);
 }
 
 .s13-bundles-cards-card-bullets {

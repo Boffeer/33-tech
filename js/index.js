@@ -1,5 +1,20 @@
+const navLinks = [...document.querySelectorAll('.pop-burger-nav__link')]
+navLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    closePop('.pop-burger');
+  })
+})
+
+
 const headerBadge = document.querySelector('.s1-header-badge');
 const headerBadgeTooltip = document.querySelector('.s1-header-badge__tooltip');
+
+poppa({
+  pop: '.pop-burger',
+  clickTrigger: '.s1-header-burger',
+  position: 'right',
+  animation: 'slide-left',
+})
 
 let isTooltipHidden = true;
 headerBadge.addEventListener('click', function() {

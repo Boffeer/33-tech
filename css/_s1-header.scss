@@ -19,6 +19,24 @@
 	max-width: 35px;
 }
 
+.s1-header-burger {
+	width: 30px;
+	height: 30px;
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: calc(var(--z-burger) * 100);
+}
+.s1-header-burger__line {
+	display: block;
+	height: 2px;
+	width: 100%;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	// background-color: var(--bgc-secondary);
+	background-color: var(--c-secondary);
+	box-shadow: var(--bs-default);
+}
 .s1-header-branding-logo__desc {
 	display: none;
 }

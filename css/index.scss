@@ -166,6 +166,9 @@ ul,
 ol {
 	list-style: none;
 }
+html {
+	scroll-behavior: smooth;
+}
 body {
 	font-family: $ff-ss;
 	font-size: $fz-p;
@@ -518,4 +521,35 @@ main {
 }
 .s15-cert-slider-slide__img {
 	border-radius: 12px;
+}
+
+.pop-burger-overlay {
+	.poppa-aligner {
+		padding: 0;
+		padding-left: 20px;
+	}
+	.poppa {
+		border-radius: 0;
+	}
+	.poppa__closer {
+		background: transparent;
+		top: 10px;
+		right: 10px;
+		color: var(--c-accent);
+	}
+}
+.pop-burger-nav {
+	height: calc(1vh * 100);
+	display: flex;
+	flex-direction: column;
+	padding-top: 40px;
+	padding-left: 20px;
+	padding-right: 50px;
+	padding-bottom: 20px;
+	overflow-y: scroll;
+}
+.pop-burger-nav__link {
+	margin-bottom: 20px;
+	font-weight: 500;
+	font-size: 16px;
 }

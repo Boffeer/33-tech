@@ -578,7 +578,6 @@ main {
 }
 
 .s1-header {
-  background-image: url(../img/s1-hero/bg.jpg);
   background-color: var(--c-accent);
   background-size: cover;
   background-repeat: no-repeat;
@@ -659,7 +658,6 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url("../img/s1-hero/ekaterina.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -950,6 +948,12 @@ main {
   }
 }
 
+@media (max-width: 1500px) {
+  .s1-header__whisk {
+    margin-left: -80px;
+  }
+}
+
 .s2-who {
   padding-bottom: 55px;
 }
@@ -1116,7 +1120,6 @@ main {
 }
 
 .s3-teches {
-  background-image: url("../img/s3-teches/bg-2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1232,7 +1235,7 @@ main {
 }
 
 .s4-founder {
-  background-image: url("../img/s4-founder/s4-bg.jpg");
+  background-color: var(--c-accent);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1403,7 +1406,6 @@ main {
 }
 
 .s5-programms {
-  background-image: url("../img/s5-programm/s5-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1564,7 +1566,7 @@ main {
 }
 
 .s5-programms-slider-slide-card__img--module-1 {
-  margin-bottom: -3px;
+  margin-bottom: 0;
   margin-top: 15px;
 }
 
@@ -1775,7 +1777,7 @@ main {
 }
 
 .s6-moms {
-  background-image: url("../img/s6-moms/s6-bg.jpg");
+  background-color: var(--c-accent);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1953,6 +1955,10 @@ main {
   .s7-videos-slider-slide-video__media--preview {
     height: 530px;
   }
+  .s7-videos-slider-slide-video__play {
+    width: 90px;
+    height: 92px;
+  }
 }
 
 .s8-reviews {
@@ -2050,6 +2056,13 @@ main {
   .s8-reviews__title {
     max-width: 800px;
   }
+  .s8-reivews-slider-slide-video__play {
+    width: 90px;
+    height: 92px;
+  }
+  .s8-reviews-slider-slide-video__media--preview {
+    height: 240px;
+  }
 }
 
 .s9-easy {
@@ -2122,7 +2135,7 @@ main {
 }
 
 .s10-inventory {
-  background-image: url("../img/s10-inventory/s8-b.jpg");
+  background-color: var(--c-accent);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2528,6 +2541,12 @@ main {
   .s12-testimonials__leaves-smooth {
     top: -30px;
     left: -100px;
+  }
+  .s12-testimonials-slider__button--next {
+    right: 31%;
+  }
+  .s12-testimonials-slider__button--prev {
+    left: 31%;
   }
 }
 
@@ -3129,6 +3148,15 @@ main {
   .s16-checkout__button {
     max-width: 349px;
     width: 100%;
+  }
+  .s16-checkout-cards-card:nth-child(4n-1) .s16-checkout-cards-card__desc br {
+    display: none;
+  }
+  .s16-checkout-cards-card:nth-child(4) .s16-checkout-cards-card__img {
+    display: block;
+    max-width: 170px;
+    right: 0px;
+    top: 70px;
   }
 }
 

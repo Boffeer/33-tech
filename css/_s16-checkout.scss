@@ -192,4 +192,15 @@
 		max-width: 349px;
 		width: 100%;
 	}
+	.s16-checkout-cards-card:nth-child(4n-1) .s16-checkout-cards-card__desc {
+		br {
+			display: none;
+		}
+	}
+	.s16-checkout-cards-card:nth-child(4) .s16-checkout-cards-card__img {
+		display: block;
+		max-width: 170px;
+		right: 0px;
+		top: 70px;
+	}
 }

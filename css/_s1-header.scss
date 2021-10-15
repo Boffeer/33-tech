@@ -1,5 +1,5 @@
 .s1-header {
-	background-image: url(../img/s1-hero/bg.jpg);
+	// background-image: url(../img/s1-hero/bg.jpg);
 	background-color: var(--c-accent);
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -64,7 +64,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-image: url("../img/s1-hero/ekaterina.png");
+	// background-image: url("../img/s1-hero/ekaterina.png");
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -302,5 +302,11 @@
 		height: 400px;
 		position: absolute;
 		left: -40px;
+	}
+}
+
+@media (max-width: 1500px) {
+	.s1-header__whisk {
+		margin-left: -80px;
 	}
 }

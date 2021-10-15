@@ -1,10 +1,19 @@
-const navLinks = [...document.querySelectorAll('.pop-burger-nav__link')]
+(function () {
+        function logElementEvent(eventName, element) {
+          console.log(Date.now(), eventName, element.getAttribute("data-src"));
+        }
+
+        var ll = new LazyLoad();
+      })();
+
+const navLinks = [...document.querySelectorAll('.pop-burger-nav__link')];
 navLinks.forEach(link => {
   link.addEventListener('click', function() {
     closePop('.pop-burger');
     document.querySelector('html').classList.remove('poppa-block-scrolling')
   })
 })
+
 
 
 const headerBadge = document.querySelector('.s1-header-badge');
@@ -273,7 +282,7 @@ setTimeout(() => {
       setTimeout(() => {
         slider.slidePrev();
       }, 400)
-      console.log('yep')
+      // console.log('yep')
     }, 20)
     // fixSingleSliderHeight(slider)
   })
@@ -366,8 +375,8 @@ dropdowns.forEach((dropdown, index) => {
 // YT video and thumbnail getter
 const reviews = [...document.querySelectorAll('.s8-reviews-slider-slide')]
 
-function getYtThumbnailUrl(id) {
-  return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`
+function getYtThumbnailUrl(id, quality) {
+  return `https://i.ytimg.com/vi/${id}/${quality}.jpg`
   // return `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`
 }
 function getYtEmbedUrl(id) {
@@ -376,12 +385,19 @@ function getYtEmbedUrl(id) {
 
 function ytLazyLoad($) {
   $.cards.forEach(card => {
+    let ytThumbnailQuality = card.getAttribute('data-thumbnail-quality')
+    if (ytThumbnailQuality === null) {
+      ytThumbnailQuality = 'maxresdefault'
+    }
+
     let ytVideoId = card.getAttribute('data-yt-id');
-    let ytThumbnailSrc = getYtThumbnailUrl(ytVideoId);
+    let ytThumbnailSrc = getYtThumbnailUrl(ytVideoId, ytThumbnailQuality);
+
     let ytEmbedSrc = getYtEmbedUrl(ytVideoId);
 
     const preview = card.querySelector($.img)
     const video = card.querySelector($.iframe)
+    // console.log(ytThumbnailQuality,preview)
 
     preview.setAttribute('src', ytThumbnailSrc);
 

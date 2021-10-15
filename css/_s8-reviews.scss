@@ -21,7 +21,7 @@
 	text-align: center;
 	font-size: calc(var(--fz-h3) + 1px);
 	font-weight: 500;
-	margin-bottom: 15px;
+	// margin-bottom: 15px;
 	padding-right: 20px;
 	padding-left: 20px;
 }
@@ -38,10 +38,12 @@
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
+	height: 470px;
 }
 
 .s8-reviews-slider-slide-video__media--preview {
 	width: 100%;
+	object-fit: cover;
 }
 .s8-reviews-slider-slide-video__media--video {
 	display: none;
@@ -64,4 +66,22 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	cursor: pointer;
+}
+
+@media (min-width: 1199px) {
+	.s8-reviews-slider {
+		max-width: 1110px;
+	}
+	.s8-reviews-slider-slide__name {
+		font-size: 25px;
+	}
+	.s8-reviews__button {
+		margin-top: 50px;
+	}
+	.s8-reviews-slider-slide-video__media {
+		height: 260px;
+	}
+	.s8-reviews__title {
+		max-width: 800px;
+	}
 }

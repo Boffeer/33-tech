@@ -55,3 +55,36 @@
 .swiper-container-horizontal>.swiper-pagination-bullets.s3-teches-slider-pagination {
 	bottom: -30px;
 }
+
+@media (min-width: 1199px) {
+	.h3-teches {
+		padding-top: 65px;
+	}
+	.s3-teches-slider__wrapper {
+		max-width: 920px;
+	}
+	.h3-teches__title {
+		max-width: 680px;
+	}
+	.s3-teches-slider-slide {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding-left: 80px;
+		max-width: 920px
+	}
+	.s3-teches-sldier-slide__title {
+		text-align: left;
+		font-weight: 500;
+	}
+	.s3-teches-sldier-slide__desc {
+		text-align: left;
+
+	}
+	.s3-teches-slider-slide__about {
+		max-width: 350px;
+	}
+	.s3-teches-slider-slide__img {
+		max-width: 300px;
+	}
+}

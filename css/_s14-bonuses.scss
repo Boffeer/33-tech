@@ -1,5 +1,6 @@
 .s14-bonuses {
-	padding-top: 30px;
+	padding-top: 10px;
+
 }
 
 .s14-bonuses-cards-card {
@@ -10,7 +11,7 @@
 	box-shadow: var(--bs-default);
 	overflow: hidden;
 	margin-bottom: 15px;
-	max-width: 320px;
+	// max-width: 320px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -88,5 +89,89 @@
 		max-height: 180px;
 		margin-right: -60px;
 		margin-bottom: -30px;
+	}
+}
+
+@media (min-width: 1199px) {
+	.s14-bonuses__title {
+		max-width: 800px;
+		margin-bottom: 20px;
+	}
+	.s14-bonuses__subtitle {
+		margin-bottom: 65px;
+	}
+	.s14-bonuses-cards-card__title {
+		font-size: 28px;
+		margin-bottom: 20px;
+		br {
+			display: none;
+		}
+	}
+	.s14-bonuses-cards-card {
+		padding: 35px 65px;
+		max-width: 100%;
+		width: 100%;
+		margin-bottom: 0;
+	}
+	.s14-bonuses-cards {
+		display: grid;
+		gap: 30px;
+		grid-template-areas: "s14b1 s14b2" "s14b3 s14b2" "s14b4 s14b4";
+	}
+	.s14-bonuses-cards-card--1 {
+		grid-area: s14b1;
+		.s14-bonuses-cards-card__img {
+			max-height: 260px;
+			margin-bottom: -50px;
+			margin-top: -160px;
+			margin-right: -120px;
+		}
+	}
+	.s14-bonuses-cards-card--2 {
+		grid-area: s14b2;
+		max-width: 444px;
+		.s14-bonuses-cards-card__title {
+			br {
+				display: initial;
+			}
+		}
+		.s14-bonuses-cards-card__img {
+			margin-bottom: -25px;
+			max-height: 100%;
+			margin-right: -220px;
+			margin-top: -60px;
+			max-width: 390px;
+		}
+	}
+	.s14-bonuses-cards-card--3 {
+		grid-area: s14b3;
+		.s14-bonuses-cards-card__img {
+			margin-bottom: 5px;
+			max-height: 230px;
+			margin-right: -155px;
+			margin-top: -200px;
+		}
+	}
+	.s14-bonuses-cards-card--4 {
+		grid-area: s14b4;
+		.s14-bonuses-cards-card__img {
+			position: absolute;
+			right: 230px;
+			top: 40px;
+			max-height: 100%;
+			margin-right: -60px;
+			margin-bottom: -30px;
+		}
+		.s14-bonuses-cards-card__number {
+			display: none;
+		}
+	}
+	.s14-bonuses-cards-card__number {
+		font-size: 90px;
+		left: 60px;
+		bottom: -30px;
+	}
+	.s14-bonuses-cards-card__desc {
+		font-size: 18px;
 	}
 }

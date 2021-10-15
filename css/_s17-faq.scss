@@ -1,5 +1,6 @@
 .s17-faq {
 	padding-bottom: 30px;
+	padding-top: 65px;
 }
 .s17-faq-cards {
 	border-top: 1px solid var(--bgc-secondary);
@@ -55,5 +56,27 @@
 	.s17-faq-cards-card-question__closer {
 	transform: translateY(-50%) rotate(45deg);
 		transition: all 0.3s;
+	}
+}
+
+@media (min-width: 1199px) {
+	.s17-faq {
+		padding-top: 120px;
+	}
+	.s17-faq-cards-card-question__closer {
+		height: 42px;
+		width: 42px;
+		font-size: 36px;
+	}
+	.s17-faq-cards {
+		max-width: 1110px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.s17-faq-cards-card-answer p {
+		font-size: 18px;
+	}
+	.s17-faq-cards-card-answer {
+		padding-top: 20px;
 	}
 }

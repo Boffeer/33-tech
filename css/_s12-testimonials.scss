@@ -3,6 +3,7 @@
 }
 .s12-testimonials-slider {
 	height: 430px;
+	min-height: 560px;
 	position: relative;
 }
 .s12-testimonials-slider-slide {
@@ -20,4 +21,14 @@
 	object-fit: cover;
 	height: 100%;
 	width: 100%;
+}
+
+@media (min-width: 1199px) {
+	.s12-testimonials {
+		padding-top: 65px;
+	}
+	.s12-testimonials__leaves-smooth {
+	    top: -30px;
+		left: -100px;
+	}
 }

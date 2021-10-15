@@ -58,3 +58,35 @@
 .swiper-container-horizontal>.swiper-pagination-bullets.s6-moms-cards-pagination {
 	bottom: -30px;
 }
+
+@media (min-width: 1199px) {
+	.s6-moms-hero {
+		transform: none;
+		margin-top: -300px;
+		margin-bottom: -520px;
+	}
+	.s6-moms-cards {
+		max-width: 1125px;
+		height: 420px;
+	}
+	.s6-moms-cards__button--prev,
+	.s6-moms-cards-pagination,
+	.s6-moms-cards__button--next {
+		display: none;
+	}
+	.s6-moms__title br {
+		display: initial;
+	}
+	.s6-moms-cards-card {
+		max-width: 342px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.s6-moms-cards-card__title {
+		font-size: 25px;
+		margin-bottom: 25px;
+	}
+	.s6-moms-cards-card__desc {
+		font-size: 14px;
+	}
+}

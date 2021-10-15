@@ -47,14 +47,17 @@ const whoSlider = new Swiper('.s2-who-slider', {
     nextEl: '.s2-who-slider-button--next',
     prevEl: '.s2-who-slider-button--prev',
   },
+  watchOverflow: true,
   breakpoints: {
     1199: {
       slidesPerView: 3,
+      navigation: false,
+      pagination: false
     },
   }
 })
 const techesSlider = new Swiper('.s3-teches-slider', {
-  spaceBetween: 50,
+  spaceBetween: 350,
   pagination: {
     el: '.s3-teches-slider-pagination',
   },
@@ -64,12 +67,12 @@ const techesSlider = new Swiper('.s3-teches-slider', {
   },
   breakpoints: {
     1199: {
-      slidesPerView: 3,
+      slidesPerView: 1,
     },
   }
 })
 const programmSlider = new Swiper('.s5-programms-slider', {
-  spaceBetween: 50,
+  spaceBetween: 500,
   pagination: {
     el: '.s5-buttons-pagination',
   },
@@ -79,10 +82,21 @@ const programmSlider = new Swiper('.s5-programms-slider', {
   },
   breakpoints: {
     1199: {
-      slidesPerView: 3,
+      slidesPerView: 1,
+      pagination: {
+        el: '.s5-buttons-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + 'Модуль ' + (index + 1) + "</span>";
+        },
+      },
     },
   }
 })
+
+let founderSlider = null;
+
+if (window.innerWidth <= 1199) {
 const founderSlider = new Swiper('.s4-founder-cards', {
   spaceBetween: 50,
   pagination: {
@@ -98,8 +112,15 @@ const founderSlider = new Swiper('.s4-founder-cards', {
     },
   }
 })
+} else {
+  document.querySelector('.s4-founder-cards').classList.remove('swiper')
+  document.querySelector('.s4-founder-cards__inner').classList.remove('swiper-wrapper')
+  const s4Slides = [...document.querySelectorAll('.s4-founder-cards-card')]
+  s4Slides.forEach(slide => slide.classList.remove('swiper-slide'))
+}
 const momsSlider = new Swiper('.s6-moms-cards', {
   spaceBetween: 50,
+  watchOverflow: true,
   pagination: {
     el: '.s6-moms-cards-pagination',
   },
@@ -124,10 +145,13 @@ const reviewsSlider = new Swiper('.s8-reviews-slider', {
   },
   breakpoints: {
     1199: {
-      slidesPerView: 3,
+      slidesPerView: 2,
     },
   }
 })
+
+let easySlider = null;
+if (window.innerWidth <= 1199) {
 const easySlider = new Swiper('.s9-easy-cards', {
   spaceBetween: 50,
   pagination: {
@@ -139,10 +163,17 @@ const easySlider = new Swiper('.s9-easy-cards', {
   },
   breakpoints: {
     1199: {
-      slidesPerView: 3,
+      slidesPerView: 5,
     },
   }
 })
+} else {
+  document.querySelector('.s9-easy-cards').classList.remove('swiper')
+  document.querySelector('.s9-easy-cards__inner').classList.remove('swiper-wrapper')
+  const s4Slides = [...document.querySelectorAll('.s9-easy-cards-card')]
+  s4Slides.forEach(slide => slide.classList.remove('swiper-slide'))
+}
+
 const testimonialsSlider = new Swiper('.s12-testimonials-slider', {
   spaceBetween: 50,
   pagination: {
@@ -184,13 +215,13 @@ const videosSlider = new Swiper('.s7-videos-slider', {
   },
   breakpoints: {
     1199: {
-      slidesPerView: 3,
+      slidesPerView: 1,
     },
   }
 })
 
 // const SLIDERS_ARRAY = [programmSlider, bundlesSlider];
-const SLIDERS_ARRAY = [
+let PREP_SLIDERS_ARRAY = [
   whoSlider,
   techesSlider,
   founderSlider,
@@ -201,7 +232,14 @@ const SLIDERS_ARRAY = [
   easySlider,
   certsSlider,
   testimonialsSlider,
-];
+]
+
+let SLIDERS_ARRAY = [];
+PREP_SLIDERS_ARRAY.forEach((slider, index) => {
+  if (slider != null) {
+    SLIDERS_ARRAY.push(slider)
+  }
+})
 
 function fixSingleSliderHeight(slider) {
     slider.$el[0].style.height = 'auto'
@@ -329,7 +367,8 @@ dropdowns.forEach((dropdown, index) => {
 const reviews = [...document.querySelectorAll('.s8-reviews-slider-slide')]
 
 function getYtThumbnailUrl(id) {
-  return `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`
+  return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`
+  // return `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`
 }
 function getYtEmbedUrl(id) {
   return `https://www.youtube.com/embed/${id}?autoplay=1&enablejsapi=1`

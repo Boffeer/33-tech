@@ -132,3 +132,31 @@
 .swiper-pagination-fraction {
 	bottom: -30px;
 }
+
+@media (min-width: 1199px) {
+	.s13-bundles-slider {
+		display: flex;
+		justify-content: space-between;
+	}
+	.s13-bundles-cards-card {
+		max-width: 350px;
+		width: 100%;
+	}
+	.s13-bundles__title {
+		max-width: 810px;
+	}
+	.s13-bundles-cards-card-heading {
+		font-size: 28px;
+	}
+	.s13-bundles-cards-card__img--1 {
+		max-width: 190px;
+		max-height: 230px;
+		margin-top: 90px;
+	}
+	.s13-bundles__button.button--secondary {
+		font-size: 14px;
+	}
+	.infobox--timer {
+		max-width: 800px;
+	}
+}

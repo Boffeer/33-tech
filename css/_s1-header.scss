@@ -143,8 +143,8 @@
 	position: relative;
 	padding-top: 20px;
 	padding-bottom: 25px;
-	padding-left: 55px;
-	padding-right: 55px;
+	padding-left: 45px;
+	padding-right: 45px;
 	@include border-inner(5px);
 	box-shadow: var(--bs-default);
 	border-radius: 12px;
@@ -154,7 +154,7 @@
 	transform: translateX(-50%);
 	width: 100%;
 	max-width: 320px;
-	bottom: -70px;
+	bottom: -80px;
 }
 .s1-infobox ul {
 	// margin-bottom: 20px;
@@ -197,6 +197,110 @@
 .s1-header__whisk {
 	display: none;
 }
-.s5-programms-slider-slide:first-child  {
-	min-height: 841px;
+
+
+@media (min-width: 1200px) {
+	.s1-header {
+		padding-top: 40px;
+		margin-bottom: 200px;
+		// overflow: hidden;
+		.buttons__container {
+			align-items: flex-start;
+		}
+	}
+	.s1-header-branding-logo {
+		max-width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	.s1-header-branding-logo__img {
+		max-width: 65px;
+		margin-right: 25px;
+	}
+	.s1-header-branding-logo__desc {
+		display: block;
+		font-size: 18px;
+		line-height: 1.5;
+	}
+	.container--header {
+		padding-bottom: 200px;
+		overflow-x: clip;
+	}
+	.s1-header__title {
+		text-align: left;
+		font-size: 70px;
+		margin-bottom: 35px;
+	}
+	.s1-header__desc {
+		text-align: left;
+		max-width: 670px;
+		font-size: 22px;
+		margin-bottom: 70px;
+	}
+	.s1-header__strawberry {
+		display: none;
+	}
+	.s1-header-branding {
+		margin-bottom: 110px;
+	}
+	.s1-infobox {
+		max-width: 1110px;
+		padding-top: 60px;
+		padding-bottom: 40px;
+		bottom: -140px;
+		overflow: hidden;
+		&:before {
+			top: 10px;
+			left: 10px;
+			width: calc(100% - 20px);
+			height: calc(100% - 20px);
+		}
+		.s1-header__button {
+			display: none;
+		}
+		ul {
+			margin-bottom: 0;
+		}
+		ul li {
+			font-size: 25px;
+			margin-bottom: 20px;
+		}
+	}
+	.s1-header__hero {
+		width: 50%;
+		height: calc(100%);
+		position: absolute;
+		right: -5%;
+		bottom: 0;
+		justify-content: flex-start;
+
+	}
+	.s1-header-badge {
+		margin-top: 320px;
+	}
+	.s1-infobox__img {
+		display: block;
+		position: absolute;
+		right: 60px;
+		bottom: -100px;
+		width: 285px;
+		object-fit: contain;
+	}
+}
+
+
+@media (min-width: 1400px) {
+	.s1-header__whisk {
+		display: block;
+		background-image: url("../img/s1-hero/whisk.png");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		max-width: 300px;
+		width: 100%;
+		height: 400px;
+		position: absolute;
+		left: -40px;
+	}
 }

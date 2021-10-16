@@ -133,6 +133,19 @@
 	bottom: -30px;
 }
 
+@media (min-width: 576px) and (max-width: 1199px) {
+	.s13-bundles-slider {
+		max-width: 420px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.infobox--timer {
+		max-width: 420px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
 @media (min-width: 1199px) {
 	.s13-bundles-slider {
 		display: flex;

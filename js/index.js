@@ -48,7 +48,7 @@ window.addEventListener('click', function(event) {
 
 
 const whoSlider = new Swiper('.s2-who-slider', {
-  spaceBetween: 50,
+  spaceBetween: 200,
   pagination: {
     el: '.s2-who-slider-pagination',
   },
@@ -58,7 +58,8 @@ const whoSlider = new Swiper('.s2-who-slider', {
   },
   watchOverflow: true,
   breakpoints: {
-    1199: {
+    768: {
+      spaceBetween: 50,
       slidesPerView: 3,
       navigation: false,
       pagination: false
@@ -75,7 +76,7 @@ const techesSlider = new Swiper('.s3-teches-slider', {
     prevEl: '.s3-teches-slider-button--prev',
   },
   breakpoints: {
-    1199: {
+    1171: {
       slidesPerView: 1,
     },
   }
@@ -90,7 +91,7 @@ const programmSlider = new Swiper('.s5-programms-slider', {
     prevEl: '.s5-slider-button--prev',
   },
   breakpoints: {
-    1199: {
+    1171: {
       slidesPerView: 1,
       pagination: {
         el: '.s5-buttons-pagination',
@@ -116,7 +117,7 @@ const founderSlider = new Swiper('.s4-founder-cards', {
     prevEl: '.s4-founder-cards__button--prev',
   },
   breakpoints: {
-    1199: {
+    1171: {
       slidesPerView: 3,
     },
   }
@@ -138,7 +139,7 @@ const momsSlider = new Swiper('.s6-moms-cards', {
     prevEl: '.s6-moms-cards__button--prev',
   },
   breakpoints: {
-    1199: {
+    1171: {
       slidesPerView: 3,
     },
   }
@@ -153,7 +154,7 @@ const reviewsSlider = new Swiper('.s8-reviews-slider', {
     nextEl: '.s8-reviews-slider__button--next',
   },
   breakpoints: {
-    1199: {
+    1171: {
       slidesPerView: 2,
     },
   }
@@ -171,7 +172,7 @@ const easySlider = new Swiper('.s9-easy-cards', {
     prevEl: '.s9-easy-cards__button--prev',
   },
   breakpoints: {
-    1199: {
+    1171: {
       slidesPerView: 5,
     },
   }
@@ -193,7 +194,7 @@ const testimonialsSlider = new Swiper('.s12-testimonials-slider', {
     prevEl: '.s12-testimonials-slider__button--prev',
   },
   breakpoints: {
-    1199: {
+    1171: {
       slidesPerView: 3,
     },
   }
@@ -208,7 +209,7 @@ const certsSlider = new Swiper('.s15-cert-slider', {
     prevEl: '.s15-cert-slider__button--prev',
   },
   breakpoints: {
-    1199: {
+    1171: {
       slidesPerView: 3,
     },
   }
@@ -223,7 +224,7 @@ const videosSlider = new Swiper('.s7-videos-slider', {
     prevEl: '.s7-videos-slider__button--prev',
   },
   breakpoints: {
-    1199: {
+    1171: {
       slidesPerView: 1,
     },
   }
@@ -234,7 +235,7 @@ let PREP_SLIDERS_ARRAY = [
   whoSlider,
   techesSlider,
   founderSlider,
-  programmSlider,
+  // programmSlider,
   momsSlider,
   videosSlider,
   reviewsSlider,

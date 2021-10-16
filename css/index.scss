@@ -80,7 +80,7 @@
 	--bs-default: 0px 7px 17.1px 0.9px rgba(0, 0, 0, 0.14);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1171px) {
 	:root {
 		--fz-h2: 42px;
 		--fz-h3: 30px;
@@ -484,8 +484,13 @@ main {
 	gap: 10px;
 }
 
-
-@media (min-width: 1199px) {
+@media (min-width: 576px) and (max-width: 1171px) {
+	.container {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+@media (min-width: 1171px) {
 	section {
 		// display: none;
 		padding-top: 65px;
@@ -527,6 +532,26 @@ main {
 	.s15-cert__title {
 		max-width: 880px;
 	}
+.leaves-smooth {
+	background-image: url("../img/decorators/leaves-smooth.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	max-width: 330px;
+	height: 446px;
+	position: absolute;
+}
+.leaves-sharp {
+	background-image: url("../img/decorators/leaves-sharp.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	max-width: 280px;
+	height: 420px;
+	position: absolute;
+}
 }
 
 @import "_s1-header.scss";
@@ -543,6 +568,7 @@ main {
 @import "_s12-testimonials.scss";
 @import "_s13-bundles.scss";
 @import "_s14-bonuses.scss";
+@import "_s15-cert.scss";
 @import "_s16-checkout.scss";
 @import "_s17-faq.scss";
 @import "_s18-contact.scss";
@@ -606,25 +632,4 @@ main {
 }
 .s15-cert-slider {
 	min-height: 520px;
-}
-
-.leaves-smooth {
-	background-image: url("../img/decorators/leaves-smooth.png");
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 100%;
-	max-width: 330px;
-	height: 446px;
-	position: absolute;
-}
-.leaves-sharp {
-	background-image: url("../img/decorators/leaves-sharp.png");
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 100%;
-	max-width: 280px;
-	height: 420px;
-	position: absolute;
 }

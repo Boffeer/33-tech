@@ -23,9 +23,25 @@
 	width: 100%;
 }
 
-@media (min-width: 1199px) {
+@media (min-width: 576px) {
+	.s12-testimonials-slider__wrapper {
+		max-width: 320px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.s12-testimonials-slider__button--next {
+		right: -30px;
+	}
+	.s12-testimonials-slider__button--prev {
+		left: -30px;
+	}
+}
+@media (min-width: 1171px) {
 	.s12-testimonials {
 		padding-top: 65px;
+	}
+	.s12-testimonials-slider__wrapper {
+		max-width: 1110px;
 	}
 	.s12-testimonials__leaves-smooth {
 	    top: -30px;

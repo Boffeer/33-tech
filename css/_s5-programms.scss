@@ -27,6 +27,7 @@
 	padding-right: 25px;
 	padding-top: 20px;
 	padding-bottom: 30px;
+	min-height: 680px;
 	@include border-inner(5px);
 }
 // .s3-teches-slider-slide--module--3 {
@@ -240,7 +241,43 @@
 	}
 }
 
-@media (min-width: 1199px) {
+@media (min-width: 576px) and (max-width: 1171px){
+}
+@media (min-width: 576px) and (max-width: 1171px){
+	.s5-programms-slider-slide{
+		// max-width: 360px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.s5-programms-slider-slide-card {
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		max-width: 320px;
+	}
+}
+@media (min-width: 576px) {
+	.s5-programms-slider-slide__title {
+		text-align: left;
+		margin-bottom: 25px;
+		justify-content: flex-start;
+		max-width: 300px;
+	}
+	.s5-programms-slider-slide__desc,
+	.s5-programms-slider-slide-bullets {
+		max-width: 300px;
+	}
+	.s5-programms-slider-slide {
+		min-height: 420px;
+		max-height: 420px;
+		padding-top: 30px;
+		padding-left: 40px;
+		.buttons__container {
+			align-items: flex-start;
+		}
+	}
+}
+@media (min-width: 1171px) {
 	.s5-buttons-pagination {
 		display: flex;
 		flex-wrap: wrap;
@@ -252,17 +289,6 @@
 	}
 	.s5-programms {
 		padding-top: 70px;
-	}
-	.s5-programms__desc {
-		display: block;
-		text-align: center;
-		font-size: 25px;
-		margin-bottom: 30px;
-		font-weight: 500;
-	}
-	.s5-programms__button {
-		padding-top: 20px;
-		padding-bottom: 20px;
 	}
 	.swiper-container-horizontal>.swiper-pagination-bullets.s5-buttons-pagination .swiper-pagination-bullet {
 		width: 160px;
@@ -294,7 +320,7 @@
 		background-size: 60%;
 		background-position-y: 140px;
 		// min-height: 836px;
-		min-height: 636px;
+		min-height: 686px;
 
 		.buttons__container {
 			align-items: flex-start;

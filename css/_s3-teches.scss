@@ -56,15 +56,11 @@
 	bottom: -30px;
 }
 
-@media (min-width: 1199px) {
-	.h3-teches {
-		padding-top: 65px;
-	}
+@media (min-width: 768px) and (max-width: 1199px) {
+}
+@media (min-width: 768px) {
 	.s3-teches-slider__wrapper {
 		max-width: 920px;
-	}
-	.h3-teches__title {
-		max-width: 680px;
 	}
 	.s3-teches-slider-slide {
 		display: flex;
@@ -86,5 +82,14 @@
 	}
 	.s3-teches-slider-slide__img {
 		max-width: 300px;
+	}
+}
+
+@media (min-width: 1199px) {
+	.h3-teches {
+		padding-top: 65px;
+	}
+	.h3-teches__title {
+		max-width: 680px;
 	}
 }

@@ -28,7 +28,7 @@
 	padding-top: 26px;
 	padding-left: 35px;
 	padding-right: 35px;
-	min-height: 320px;
+	min-height: 324px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -60,9 +60,16 @@
 	bottom: -30px;
 }
 
-@media (min-width: 1199px) {
+@media (min-width: 576px) {
 	.s6-moms-hero {
 		transform: none;
+		margin-top: -180px;
+		margin-bottom: -350px;
+	}
+}
+
+@media (min-width: 1199px) {
+	.s6-moms-hero {
 		margin-top: -300px;
 		margin-bottom: -520px;
 	}

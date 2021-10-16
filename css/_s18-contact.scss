@@ -58,6 +58,16 @@
 }
 
 
+@media (min-width: 576px) {
+	.s18-contacts-cards {
+		display: flex;
+		justify-content: center;
+	}
+	.s18-contacts-cards-card {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+}
 @media (min-width: 1199px) {
 	.s18-contacts {
 		padding-top: 80px;

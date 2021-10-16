@@ -113,21 +113,7 @@
 	line-height: 1.5;
 }
 
-@media (min-width: 1199px) {
-	.s11-learning-cards {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-		margin-bottom: 95px;
-	}
-	.s11-learning-cards-profile {
-		max-widtH: 140px;
-		margin-left: 0;
-		margin-right: 0;
-	}
-	.s11-learning-cards__inner {
-		width: 80%;
-	}
+@media (min-width: 768px) {
 	.s11-learning-cards-card {
 		display: inline-block;
 		padding: 40px;
@@ -163,7 +149,7 @@
 		width: 100%;
 		margin-right: 30px;
 		.s11-learning-cards-card__desc {
-			max-width: 340px;
+			max-width: 220px;
 			br {
 				display: none;
 			}
@@ -182,13 +168,26 @@
 			transform: none;
 		}
 	}
-	.s11-learning-cards-card__number {
-		left: -5px;
-		bottom: -35px;
-		font-size: 90px;
+}
+@media (min-width: 1199px) {
+	.s11-learning-cards {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 95px;
 	}
-	.s11-learning-cards-card__desc {
-		font-size: 18px;
+	.s11-learning-cards-profile {
+		max-width: 140px;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.s11-learning-cards__inner {
+		width: 80%;
+	}
+	.s11-learning-cards-card--5 {
+		.s11-learning-cards-card__desc {
+			max-width: 340px;
+		}
 	}
 	.s11-learning-hint {
 		max-width: 791px;
@@ -205,5 +204,13 @@
 	.s11-learning__leaves-sharp {
 		right: -40px;
 		top: 20%;
+	}
+	.s11-learning-cards-card__desc {
+		font-size: 18px;
+	}
+	.s11-learning-cards-card__number {
+		left: -5px;
+		bottom: -35px;
+		font-size: 90px;
 	}
 }

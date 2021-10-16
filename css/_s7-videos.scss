@@ -41,21 +41,29 @@
 	background-position: center;
 	cursor: pointer;
 }
+@media (min-width: 576px) {
+	.s7-videos-slider-slide-video__media {
+		height: 450px;
+	}
+	.s7-videos-slider-slide-video__media--preview {
+		height: 450px;
+	}
+}
 
 @media (min-width: 1199px) {
 	.s7-videos__button {
 		max-width: 310px;
-	}
-	.s7-videos-slider {
-		max-width: 960px;
-		margin-left: auto;
-		margin-right: auto;
 	}
 	.s7-videos-slider-slide-video__media {
 		height: 530px;
 	}
 	.s7-videos-slider-slide-video__media--preview {
 		height: 530px;
+	}
+	.s7-videos-slider {
+		max-width: 960px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	.s7-videos-slider-slide-video__play {
 		width: 90px;

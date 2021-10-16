@@ -1,7 +1,7 @@
 .s16-checkout {
 	padding-top: 25px;
 	padding-bottom: 160px;
-	background-image: url("../img/s3-teches/bg-2.jpg");
+	// background-image: url("../img/s3-teches/bg-2.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -118,14 +118,7 @@
 	}
 }
 
-@media (min-width: 1199px) {
-	.s16-checkout {
-		padding-top: 100px;
-	}
-	.s16-checkout__wrapper {
-		display: flex;
-		justify-content: space-between;
-	}
+@media (min-width: 768px) {
 	.s16-checkout-cards {
 		max-width: 870px;
 		width: 100%;
@@ -136,13 +129,13 @@
 		display: inline-block;
 		margin-right: 30px;
 		margin-bottom: 30px;
-		max-width: 462px;
+		max-width: 362px;
 		width: 100%;
 		height: 180px;
 		padding: 30px;
 		&:nth-child(2),
 		&:nth-child(3) {
-			max-width: 340px;
+			max-width: 300px;
 		}
 		&:nth-child(1) {
 			.s16-checkout-cards-card__img {
@@ -157,6 +150,56 @@
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
+	}
+	.s16-checkout-cards-card:nth-child(4n-1) .s16-checkout-cards-card__desc {
+		br {
+			display: none;
+		}
+	}
+	.s16-checkout-cards-card:nth-child(4) .s16-checkout-cards-card__img {
+		display: block;
+		max-width: 170px;
+		right: 0px;
+		top: 70px;
+	}
+}
+@media (min-width: 420px) and (max-width: 576px) {
+	.s16-checkout-cards-card__img {
+			max-width: 220px;
+		}
+}
+@media (min-width: 576px) and (max-width: 1199px) {
+	.s16-checkout{
+		padding-bottom: 80px;
+		margin-bottom: 160px;
+	}
+	.s16-checkout-infobox {
+		flex-direction: column;
+	}
+	.s16-checkout-infobox {
+		bottom: -170px;
+		max-width: 500px;
+		br {
+			display: none;
+		}
+	}
+	.s16-checkout__button {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.s16-checkout-cards {
+		max-width: 740px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+@media (min-width: 1199px) {
+	.s16-checkout {
+		padding-top: 100px;
+	}
+	.s16-checkout__wrapper {
+		display: flex;
+		justify-content: space-between;
 	}
 	.s16-checkout-infobox {
 		display: flex;
@@ -178,6 +221,13 @@
 			display: none;
 		}
 	}
+	.s16-checkout-cards-card {
+		max-width: 462px;
+		&:nth-child(2),
+		&:nth-child(3) {
+			max-width: 340px;
+		}
+	}
 	.s16-checkout-infobox__desc {
 		max-width: 365px;
 		text-align: left;
@@ -191,16 +241,5 @@
 	.s16-checkout__button {
 		max-width: 349px;
 		width: 100%;
-	}
-	.s16-checkout-cards-card:nth-child(4n-1) .s16-checkout-cards-card__desc {
-		br {
-			display: none;
-		}
-	}
-	.s16-checkout-cards-card:nth-child(4) .s16-checkout-cards-card__img {
-		display: block;
-		max-width: 170px;
-		right: 0px;
-		top: 70px;
 	}
 }

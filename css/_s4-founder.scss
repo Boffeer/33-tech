@@ -81,22 +81,24 @@
 	bottom: -25px;
 }
 
-@media (min-width: 1199px) {
-	.s4-founder {
-		padding-bottom: 100px;
-	}
+@media (min-width: 768px) {
 	.s4-founder-hero {
 		max-width: 1190px;
 		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: -300px;
-		margin-top: -150px;
+		margin-top: -60px;
 	}
 	.s4-founder-cards-card-badge {
 		max-width: 410px;
 		margin-left: auto;
 		margin-right: auto;
+	}
+}
+@media (min-width: 1199px) {
+	.s4-founder {
+		padding-bottom: 100px;
 	}
 	.s4-founder-cards {
 		max-width: 100%;
@@ -114,6 +116,9 @@
 	.s4-founder-card__desc {
 		font-size: 14px;
 		line-height: 1.4;
+	}
+	.s4-founder-hero {
+		margin-top: -150px;
 	}
 	.s4-founder-cards-card {
 		max-width: 330px;

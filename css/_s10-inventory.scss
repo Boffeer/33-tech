@@ -65,10 +65,33 @@
 	}
 }
 
+@media (min-width: 576px) {
+	.s10-inventory-card-hero {
+		max-width: 570px;
+		position: absolute;
+		right: -150px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.s10-inventory-card-hero:before {
+		width: 440px;
+		height: 440px;
+		bottom: unset;
+		left: unset;
+		top: 60px;
+		right: 60px;
+	}
+	.s10-inventory-card__desc {
+		max-width: 660px;
+	}
+}
 @media (min-width: 1199px) {
 	.s10-inventory {
 		padding-top: 100px;
 		padding-bottom: 100px;
+	}
+	.s10-inventory-card-hero {
+		max-width: 700px;
 	}
 	.s10-inventory-card {
 		padding-top: 100px;
@@ -83,27 +106,9 @@
 		width: calc(100% - 24px);
 		height: calc(100% - 24px);
 	}
-	.s10-inventory-card-hero {
-		max-width: 700px;
-		position: absolute;
-		right: -150px;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-	.s10-inventory-card-hero:before {
-		width: 440px;
-		height: 440px;
-		bottom: unset;
-		left: unset;
-		top: 60px;
-		right: 60px;
-	}
 	.s10-inventory-card-bullets__bullet:before {
 		left: -22px;
 		top: -13px;
 		font-size: 2.6rem;
-	}
-	.s10-inventory-card__desc {
-		max-width: 660px;
 	}
 }
